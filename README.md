@@ -4,3 +4,6 @@
 1. [Install](https://docs.mongodb.com/manual/administration/install-community) MongoDB community edition.
 1. Start the mongodb server: `brew services start mongodb-community`
 1. `yarn` && `yarn start`
+
+## Tools
+Install the tslint plugin in your editor to get the linting capabilities.
