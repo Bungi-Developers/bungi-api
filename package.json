@@ -1,0 +1,27 @@
+{
+  "name": "bungi-api",
+  "version": "0.0.0",
+  "description": "API for bungi",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/Bungi-Developers/bungi-api",
+  "author": "Ryan C. Collins <rccproductions@mac.com>",
+  "license": "None",
+  "private": true,
+  "scripts": {
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.5.2",
+    "tslint": "^5.20.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "graphql": "^14.5.8",
+    "graphql-yoga": "^1.18.3",
+    "mongoose": "^5.7.11"
+  }
+}
