@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import { Message } from './types'
 
 const MessageSchema: Schema = new Schema({
@@ -6,4 +6,4 @@ const MessageSchema: Schema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
 });
 
-export default mongoose.model<Message>('Message', MessageSchema)
+export default model<Message>('Message', MessageSchema)

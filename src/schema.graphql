@@ -1,13 +1,8 @@
 type Query {
-  me: User
+  users: [User]
+  chats: [Chat]
+  messages: [Message]
 }
-
-type Mutation {
-  signup(email: String!, password: String!, name: String!): AuthPayload!
-  login(email: String!, password: String!): AuthPayload!
-}
-
-type Subscription {}
 
 type AuthPayload {
   token: String!
@@ -28,6 +23,6 @@ type Message {
 
 type Chat {
   id: ID!
-  users: [User!]!
-  messages: [Message!]!
+  users: [User]!
+  messages: [Message]!
 }

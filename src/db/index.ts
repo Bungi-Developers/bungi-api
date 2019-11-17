@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import * as mongoose from 'mongoose'
 import { Message, User, Chat } from './models'
 
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bungi'
@@ -62,12 +62,8 @@ const createMessageSeeds = () => {
 const createChatSeeds = () => {
   const seedChats = [
     {
-      users: [
-        User.findOne({ email: 'demo.user@gmail.com' }),
-        User.findOne({ email: 'fake.person@gmail.com' }),
-      ],
-      message: [
-
+      users: [],
+      messages: [
       ],
     },
   ]
@@ -92,6 +88,7 @@ const createSeedData = () => {
   return Promise.all([
     createUserSeeds(),
     createMessageSeeds(),
+    createChatSeeds(),
   ])
 }
 
@@ -110,7 +107,7 @@ export default () => {
     )
     .then(() => {
       // If you need to, use this to create seed data.
-      // createSeedData();
+      createSeedData();
       return console.info(`Successfully connected to ${DB_URI}`);
     })
     .catch((error) => {

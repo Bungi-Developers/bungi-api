@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import { User } from './types'
 
 const UserSchema: Schema = new Schema({
@@ -7,4 +7,4 @@ const UserSchema: Schema = new Schema({
   lastName: { type: String, required: true },
 })
 
-export default mongoose.model<User>('User', UserSchema)
+export default model<User>('User', UserSchema)
