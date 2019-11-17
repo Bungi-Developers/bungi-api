@@ -3,7 +3,7 @@ import resolvers from './resolvers'
 import connect from './db'
 
 const server = new GraphQLServer({
-  typeDefs: './schema.graphql',
+  typeDefs: './src/schema.graphql',
   resolvers,
 })
 

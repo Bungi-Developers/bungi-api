@@ -66,6 +66,9 @@ const createChatSeeds = () => {
         User.findOne({ email: 'demo.user@gmail.com' }),
         User.findOne({ email: 'fake.person@gmail.com' }),
       ],
+      message: [
+
+      ],
     },
   ]
   return new Promise((res, rej) => {
@@ -88,6 +91,7 @@ const createChatSeeds = () => {
 const createSeedData = () => {
   return Promise.all([
     createUserSeeds(),
+    createMessageSeeds(),
   ])
 }
 

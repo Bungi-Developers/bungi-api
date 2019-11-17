@@ -28,6 +28,6 @@ type Message {
 
 type Chat {
   id: ID!
-  users: User[]!
-  messages: Message[]!
+  users: [User!]!
+  messages: [Message!]!
 }
