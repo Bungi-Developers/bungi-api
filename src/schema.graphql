@@ -9,11 +9,25 @@ type AuthPayload {
   user: User!
 }
 
+type Profile {
+  imageUrls: [String],
+  age: Int,
+  heightInches: Int,
+  location: String,
+  job: String,
+  education: String,
+  politicalIdeology: String,
+  religion: String,
+  hometown: String,
+}
+
 type User {
   id: ID!
-  email: String!
+  phone: String!
   firstName: String!
   lastName: String!
+  rating: Float!
+  profile: Profile!
 }
 
 type Message {

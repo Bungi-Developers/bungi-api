@@ -6,14 +6,48 @@ const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bungi'
 const createUserSeeds = () => {
   const seedUsers = [
     {
-      email: 'demo.user@gmail.com',
-      firstName: 'Demo',
-      lastName: 'User',
+      phone: '123-456-7890',
+      firstName: 'Annie',
+      lastName: 'Blondey',
+      rating: 9.5,
+      profile: {
+        imageUrls: [
+          'https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=998&q=80',
+          'https://images.unsplash.com/photo-1532616967597-fb8bb5b33429?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
+          'https://images.unsplash.com/photo-1524512250595-1c8a92523f17?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60',
+        ],
+        age: 22,
+        heightInches: 61,
+        location: 'Fort Collins, CO',
+        job: 'Waitress',
+        education: 'NYU',
+        politicalIdeology: 'Democrat',
+        religion: 'Agnostic',
+        hometown: 'Greely, CO',
+      },
     },
     {
-      email: 'fake.person@gmail.com',
-      firstName: 'Fake',
-      lastName: 'Person',
+      phone: '223-456-7890',
+      firstName: 'Stephanie',
+      lastName: 'RedHead',
+      rating: 8.4,
+      profile: {
+        imageUrls: [
+          'https://images.unsplash.com/photo-1536763225213-b5592b525630?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
+          // tslint:disable: max-line-length
+          'https://images.unsplash.com/photo-1524693194261-a20729b00bf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+          'https://images.unsplash.com/photo-1489597500842-8347eb432c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+          // tslint:enable: max-line-length
+        ],
+        age: 26,
+        heightInches: 63,
+        location: 'Fairfield, CT',
+        job: 'Finance',
+        education: 'Madison',
+        politicalIdeology: 'Democrat',
+        religion: 'Christian',
+        hometown: 'Washington, DC',
+      },
     },
   ]
   return new Promise((res, rej) => {
