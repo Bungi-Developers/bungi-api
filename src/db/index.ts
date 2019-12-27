@@ -96,7 +96,7 @@ const createUserSeeds = () => {
     },
   ]
   return new Promise((res, rej) => {
-    User.deleteMany((err) => {
+    User.deleteMany({}, (err) => {
       if (err) {
         rej(err);
       }

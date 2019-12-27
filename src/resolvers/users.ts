@@ -7,20 +7,15 @@ const convertInchesToString = (heightInches) => {
   return `${feet}'${inches ? ` ${inches}"` : ''}`;
 };
 
-export default () => {
-  User.find({}).exec((err, users) => {
-    if (err) {
-      console.log(err);
-    }
-    return users.toArray().map((user) => {
-      return {
-        ...user,
-        name: `${user.firstName} ${user.lastName}`,
-        profile: {
-          ...user.profile,
-          height: convertInchesToString(user.profile.heightInches),
-        },
-      };
-    });
-  });
+export default async () => {
+  const users = await User.find({}).exec();
+  return users.map((item) => item.toObject()).map((user) => ({
+    ...user,
+    id: user._id,
+    name: `${user.firstName} ${user.lastName}`,
+    profile: {
+      ...user.profile,
+      height: convertInchesToString(user.profile.heightInches),
+    },
+  }));
 };
