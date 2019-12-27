@@ -1,10 +1,17 @@
 type Query {
   users: [User]
+  user(id: String): User
+  discover(sex: String, location: String): [User]
 }
 
 type AuthPayload {
   token: String!
   user: User!
+}
+
+type Connection {
+  user: User!
+  chatting: Boolean!
 }
 
 type Profile {
@@ -24,6 +31,7 @@ type User {
   id: ID!
   phone: String!
   name: String!
+  connections: [Connection]
   rating: Float!
   profile: Profile!
 }

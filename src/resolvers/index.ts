@@ -1,7 +1,7 @@
-import usersResolver from './users';
+import discoverResolver from './discover';
 
 export default {
   Query: {
-    users: usersResolver,
+    discover: discoverResolver,
   },
 }

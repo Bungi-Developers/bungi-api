@@ -7,8 +7,8 @@ const convertInchesToString = (heightInches) => {
   return `${feet}'${inches ? ` ${inches}"` : ''}`;
 };
 
-export default async () => {
-  const users = await User.find({}).exec();
+export default async (_, {sex, location}) => {
+  const users = await User.find({ 'profile.sex': sex, 'profile.location': location }).exec();
   return users.map((item) => item.toObject()).map((user) => ({
     ...user,
     id: user._id,
