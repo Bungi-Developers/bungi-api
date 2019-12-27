@@ -54,7 +54,6 @@ const createUserSeeds = () => {
       phone: '223-456-7890',
       firstName: 'Rachel',
       lastName: 'RedHead',
-      sex: 'Female',
       rating: 8.4,
       profile: {
         imageUrls: [
@@ -63,6 +62,7 @@ const createUserSeeds = () => {
           'https://images.unsplash.com/photo-1489597500842-8347eb432c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
         ],
         age: 27,
+        sex: 'Female',
         heightInches: 63,
         location: 'Fairfield, CT',
         job: 'Finance',
@@ -76,7 +76,6 @@ const createUserSeeds = () => {
       phone: '323-456-7890',
       firstName: 'Betty',
       lastName: 'Brunette',
-      sex: 'Female',
       rating: 9.1,
       profile: {
         imageUrls: [
@@ -86,6 +85,7 @@ const createUserSeeds = () => {
         ],
         age: 23,
         heightInches: 60,
+        sex: 'Female',
         location: 'Fairfield, CT',
         job: 'Model',
         education: 'Stanford',
