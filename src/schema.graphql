@@ -1,6 +1,6 @@
 type Query {
   users: [User]
-  user(id: String): User
+  user(phone: String): User
   discover(sex: String, location: String): [User]
 }
 
