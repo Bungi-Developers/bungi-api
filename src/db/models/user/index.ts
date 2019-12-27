@@ -11,6 +11,7 @@ const ProfileSchema: Schema = new Schema({
   politicalIdeology: { type: String },
   religion: { type: String },
   hometown: { type: String },
+  sex: { type: String },
 });
 
 const UserSchema: Schema = new Schema({

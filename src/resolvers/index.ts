@@ -1,11 +1,7 @@
-import User from '../db/models/user';
-import Chat from '../db/models/chat';
-import Message from '../db/models/message';
+import usersResolver from './users';
 
 export default {
   Query: {
-    users: () => User.find({}),
-    chats: () => Chat.find({}),
-    messages: () => Message.find({}),
+    users: usersResolver,
   },
 }

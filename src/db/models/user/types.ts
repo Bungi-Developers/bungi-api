@@ -10,6 +10,7 @@ export interface Profile extends Document {
   politicalIdeology: string;
   religion: string;
   hometown: string;
+  sex: string;
 }
 
 export interface User extends Document {
