@@ -16,18 +16,12 @@ const ProfileSchema: Schema = new Schema({
   sex: { type: String },
 });
 
-const ConnectionSchema: Schema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
-  chatting: { type: Boolean, required: true, default: false },
-});
-
-const UserSchema: Schema = new Schema({
+export const UserSchema: Schema = new Schema({
   phone: { type: String, required: true, unique: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   rating: { type: Number },
   profile: ProfileSchema,
-  connections: [ConnectionSchema],
 });
 
 export default model<User>('User', UserSchema)

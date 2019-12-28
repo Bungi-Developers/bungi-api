@@ -1,5 +1,5 @@
-import User, { UserModel } from '../db/models/user';
-import { mapUserData } from './utils'
+import User, { UserModel } from '../../db/models/user';
+import { mapUserData } from './utils';
 
 interface UserPayload {
   id: string;

@@ -1,4 +1,4 @@
-import { UserModel } from '../db/models/user';
+import { UserModel } from '../../db/models/user';
 import { UserPayload } from './types';
 
 const convertInchesToString = (heightInches: number): string => {
