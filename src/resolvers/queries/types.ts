@@ -1,3 +1,4 @@
+import { MessageModel } from '../../db/models/message'
 
 export interface UserPayload {
   id: string;
@@ -15,4 +16,8 @@ export interface UserPayload {
     hometown: string;
     sex: string;
   };
+}
+
+export interface CurrentChatsPayload {
+  messages: MessageModel[];
 }

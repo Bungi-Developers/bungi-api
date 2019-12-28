@@ -1,5 +1,6 @@
 
 import { Document } from 'mongoose';
+import { ChatModel } from '../chat';
 
 export interface Profile extends Document {
   imageUrls: string[];
@@ -19,4 +20,5 @@ export interface User extends Document {
   lastName: string;
   rating: number;
   profile: Profile;
+  chats: ChatModel[];
 }

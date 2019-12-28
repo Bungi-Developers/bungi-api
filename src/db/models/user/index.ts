@@ -22,6 +22,7 @@ export const UserSchema: Schema = new Schema({
   lastName: { type: String, required: true },
   rating: { type: Number },
   profile: ProfileSchema,
+  chats: [{ type: Schema.Types.ObjectId, ref: 'Chat' }],
 });
 
 export default model<User>('User', UserSchema)

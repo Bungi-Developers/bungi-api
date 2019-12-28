@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import * as mongoose from 'mongoose'
-import { User } from './models'
+import { User, Chat } from './models'
 
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bungi'
 
@@ -10,6 +10,7 @@ const createUserSeeds = () => {
       phone: '555-555-5555',
       firstName: 'Michael',
       lastName: 'Plazek',
+      chats: [],
       rating: 10.0,
       profile: {
         imageUrls: [
@@ -32,6 +33,7 @@ const createUserSeeds = () => {
       phone: '555-555-1234',
       firstName: 'Ryan',
       lastName: 'Collins',
+      chats: [],
       rating: 10.0,
       profile: {
         imageUrls: [
@@ -54,6 +56,7 @@ const createUserSeeds = () => {
       phone: '123-456-7890',
       firstName: 'Brittany',
       lastName: 'Blondey',
+      chats: [],
       rating: 9.5,
       profile: {
         imageUrls: [
@@ -76,6 +79,7 @@ const createUserSeeds = () => {
       phone: '423-456-7890',
       firstName: 'Sarah',
       lastName: 'Sweety',
+      chats: [],
       rating: 9.1,
       profile: {
         imageUrls: [
@@ -98,6 +102,7 @@ const createUserSeeds = () => {
       phone: '223-456-7890',
       firstName: 'Rachel',
       lastName: 'RedHead',
+      chats: [],
       rating: 8.4,
       profile: {
         imageUrls: [
@@ -118,6 +123,7 @@ const createUserSeeds = () => {
     },
     {
       phone: '323-456-7890',
+      chats: [],
       firstName: 'Betty',
       lastName: 'Brunette',
       rating: 9.1,
@@ -153,14 +159,12 @@ const createUserSeeds = () => {
           res(data);
         },
       );
-    })
+    });
   });
 }
 
-const createSeedData = () => {
-  return Promise.all([
-    createUserSeeds(),
-  ])
+const createSeedData = async () => {
+  await createUserSeeds();
 }
 
 export default () => {
@@ -177,9 +181,9 @@ export default () => {
       { useNewUrlParser: true },
     )
     .then(() => {
+      console.info(`Successfully connected to ${DB_URI}`);
       // If you need to, use this to create seed data.
-      createSeedData();
-      return console.info(`Successfully connected to ${DB_URI}`);
+      return createSeedData();
     })
     .catch((error) => {
       console.error('Error connecting to database: ', error);

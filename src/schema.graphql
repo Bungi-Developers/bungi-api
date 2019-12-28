@@ -2,6 +2,19 @@ type Query {
   users: [User]
   user(phone: String): User
   discover(sex: String, location: String): [User]
+  currentChats(phone: String): Chat
+}
+
+type Mutation {
+  createChat(createdBy: String, recipient: String, message: String): Chat
+}
+
+type Chat {
+  messages: [Message]
+}
+
+type Message {
+  url: String
 }
 
 type AuthPayload {
