@@ -1,7 +1,12 @@
 import User from '../db/models/user';
 import { mapUserData } from './utils';
+import { UserPayload } from './types';
 
-export default async (_, { phone }) => {
+interface Args {
+  phone: string;
+}
+
+export default async (_, { phone }: Args): Promise<UserPayload> => {
   const user = await User.findOne({ phone }).exec();
   return mapUserData(user.toObject());
 };

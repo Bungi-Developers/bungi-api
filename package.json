@@ -20,6 +20,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "@types/mongoose": "^5.5.36",
     "graphql": "^14.5.8",
     "graphql-yoga": "^1.18.3",
     "mongoose": "^5.7.11"

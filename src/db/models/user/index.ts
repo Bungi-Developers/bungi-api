@@ -1,5 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { User } from './types'
+import { User } from './types';
+
+export { User as UserModel } from './types'
 
 const ProfileSchema: Schema = new Schema({
   imageUrls: [{ type: String }],
