@@ -21,4 +21,5 @@ export interface User extends Document {
   rating: number;
   profile: Profile;
   chats: ChatModel[];
+  passes: User[];
 }

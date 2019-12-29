@@ -22,11 +22,13 @@ interface UserPayload {
 interface Args {
   sex: string;
   location: string;
+  phone: string;
 }
 
-export default async (_, { sex, location }: Args): Promise<UserPayload[]> => {
+export default async (_, { sex, location, phone }: Args): Promise<UserPayload[]> => {
+  const currentUser: UserModel = await User.findOne({ phone }).exec();
   const users: UserModel[] = await User
-    .find({ 'profile.sex': sex, 'profile.location': location })
+    .find({ '_id': { $nin: currentUser.passes }, 'profile.sex': sex, 'profile.location': location })
     .exec();
   return users.map((item) => item.toObject()).map(mapUserData);
 };

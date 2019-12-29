@@ -1,12 +1,13 @@
 type Query {
   users: [User]
   user(phone: String): User
-  discover(sex: String, location: String): [User]
+  discover(sex: String, location: String, phone: String): [User]
   currentChats(phone: String): Chat
 }
 
 type Mutation {
   createChat(createdBy: String, recipient: String, message: String): Chat
+  passUser(user: String, phone: String): Boolean
 }
 
 type Chat {

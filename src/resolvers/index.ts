@@ -1,5 +1,5 @@
 import { discoverQuery, userQuery, currentChatsQuery } from './queries';
-import { createChatMutation } from './mutations';
+import { createChatMutation, passUserMutation } from './mutations';
 
 export default {
   Query: {
@@ -9,5 +9,6 @@ export default {
   },
   Mutation: {
     createChat: createChatMutation,
+    passUser: passUserMutation,
   },
 }
