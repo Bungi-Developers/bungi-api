@@ -44,7 +44,7 @@ type User {
   id: ID!
   phone: String!
   name: String!
-  connections: [Connection]
+  chats: [Chat]
   rating: Float!
   profile: Profile!
 }

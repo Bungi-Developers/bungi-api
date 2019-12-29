@@ -7,5 +7,6 @@ interface Args {
 
 export default async (_, { phone }: Args): Promise<CurrentChatsPayload[]> => {
   const user = await User.findOne({ phone }).populate('chats', 'messages').exec();
-  return user.chats.map((item) => ({ messages: item.toObject().messages }));
+  const chats =  user.chats.map((item) => item.toObject());
+  return chats;
 };

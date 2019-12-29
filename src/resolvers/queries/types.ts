@@ -19,5 +19,6 @@ export interface UserPayload {
 }
 
 export interface CurrentChatsPayload {
+  id: string;
   messages: MessageModel[];
 }
