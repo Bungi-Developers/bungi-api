@@ -19,9 +19,7 @@ export default () => {
     .then(() => {
       console.info(`Successfully connected to ${DB_URI}`);
       // If you need to, use this to create seed data.
-      if (process.env.BUNGI_API_CREATE_SEEDS) {
-        return createSeedData();
-      }
+      return createSeedData();
     })
     .catch((error) => {
       console.error('Error connecting to database: ', error);

@@ -169,22 +169,30 @@ const createUserSeeds = () => {
         hometown: 'Washington, DC',
       },
     },
-    ...createNSeedUsers(20),
+    ...createNSeedUsers(50),
   ]
   return new Promise((res, rej) => {
-    User.deleteMany({}, (err) => {
+    User.find({}, (err, users) => {
       if (err) {
         rej(err);
       }
-      User.create(
-        seedUsers,
-        (innerErr, data) => {
+      if (process.env.BUNGI_API_CREATE_SEEDS || !users.length) {
+        User.deleteMany({}, (innerErr) => {
           if (innerErr) {
             rej(innerErr);
           }
-          res(data);
-        },
-      );
+          User.create(
+            seedUsers,
+            (innerInnerErr, data) => {
+              if (innerInnerErr) {
+                rej(innerInnerErr);
+              }
+              res(data);
+            },
+          );
+        });
+      }
+      res(true);
     });
   });
 }
