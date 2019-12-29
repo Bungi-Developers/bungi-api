@@ -18,7 +18,7 @@ const createFakeUser = () => ({
     sex: 'Female',
     age: random(21, 32),
     heightInches: random(60, 69),
-    location: ['Farfield, CT', 'Fort Collins, CO'][random(0, 1)],
+    location: ['Fairfield, CT', 'Fort Collins, CO'][random(0, 1)],
     job: faker.name.jobTitle(),
     education: ['Colorado University', 'Fairfield University', 'Colorado Colege', 'Georgia Tech'][random(0, 3)],
     politicalIdeology: ['Democrat', 'Republican', 'Moderate'][random(0, 2)],
